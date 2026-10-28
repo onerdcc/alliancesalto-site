@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101010">
+  <title>404 — Página não encontrada | Alliance Salto</title>
+  <style>
+    :root{color-scheme:dark;--gold:#ffc20e;--ink:#101010}
+    *{box-sizing:border-box}
+    body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 70% 20%,#49370c 0%,#19170f 28%,var(--ink) 65%);color:#fff;font-family:Arial,sans-serif;display:flex;flex-direction:column}
+    header{height:78px;border-bottom:1px solid #ffffff1c;display:flex;align-items:center}
+    .wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    .brand{font-family:Impact,'Arial Narrow',sans-serif;font-size:24px;line-height:.85;text-decoration:none;color:#fff;letter-spacing:.02em}
+    .brand span{color:var(--gold)}
+    .brand small{display:block;margin-top:7px;font:700 8px Arial,sans-serif;letter-spacing:.25em;color:#ccc}
+    main{flex:1;display:grid;place-items:center;text-align:center;padding:70px 20px;position:relative;overflow:hidden}
+    main:before{content:'404';position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);font:900 clamp(220px,43vw,540px)/.8 Impact,'Arial Narrow',sans-serif;color:#ffffff06;pointer-events:none}
+    .content{position:relative;max-width:650px}
+    .eyebrow{display:flex;justify-content:center;align-items:center;gap:10px;color:var(--gold);font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+    .eyebrow:before,.eyebrow:after{content:'';width:25px;height:2px;background:var(--gold)}
+    h1{font:900 clamp(72px,14vw,150px)/.85 Impact,'Arial Narrow',sans-serif;text-transform:uppercase;letter-spacing:-.025em;margin:24px 0}
+    h1 span{color:var(--gold)}
+    p{color:#c5c2ba;line-height:1.7;font-size:16px;margin:0 auto;max-width:440px}
+    .actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}
+    .btn{display:inline-flex;justify-content:center;align-items:center;gap:9px;min-height:48px;padding:0 22px;border-radius:3px;background:linear-gradient(120deg,#ffdf61,#ffc20e 48%,#e89a00);color:#15130e;text-decoration:none;text-transform:uppercase;font-size:11px;font-weight:800;letter-spacing:.08em;transition:.2s}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 10px 30px #ffc20e33}
+    .btn.secondary{background:transparent;border:1px solid #ffffff40;color:#fff}
+    .btn.secondary:hover{border-color:var(--gold);color:var(--gold);box-shadow:none}
+    footer{padding:20px;text-align:center;border-top:1px solid #ffffff1c;color:#999;font-size:11px}
+    footer a{color:#ddd;text-decoration:none}footer a:hover{color:var(--gold)}
+    @media(max-width:480px){header{height:68px}p{font-size:14px}.actions{flex-direction:column;align-items:stretch;max-width:280px;margin:26px auto 0}}
+  </style>
+</head>
+<body>
+  <header><div class="wrap"><a class="brand" href="index.html">ALLIANCE<span>.</span><small>SALTO · JIU-JITSU & JUDÔ</small></a></div></header>
+  <main>
+    <div class="content">
+      <div class="eyebrow">Perdeu o caminho?</div>
+      <h1>Essa página<br>não está <span>no tatame.</span></h1>
+      <p>O endereço pode ter mudado ou não existir. Volte para a página inicial e continue sua jornada com a Alliance Salto.</p>
+      <div class="actions">
+        <a class="btn" href="index.html">Voltar ao início <span>↗</span></a>
+        <a class="btn secondary" href="https://wa.me/5511943094339">Falar com a equipe</a>
+      </div>
+    </div>
+  </main>
+  <footer>© <span id="year"></span> Alliance Salto · Criado por <a href="https://onerd.cc" target="_blank" rel="noreferrer">ONerd</a></footer>
+  <script>document.querySelector('#year').textContent=new Date().getFullYear()</script>
+</body>
+</html>

@@ -1,0 +1,1126 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#111111">
+    <meta name="description"
+        content="Alliance Salto — Jiu-jitsu e judô para todas as idades. Encontre sua força no tatame.">
+    <title>Alliance Salto | Jiu-jitsu & Judô</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --gold: #ffc20e;
+            --ink: #101010;
+            --paper: #f5f3ed;
+            --muted: #aaa69c;
+            --line: rgba(255, 255, 255, .13)
+        }
+
+        * {
+            box-sizing: border-box
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 82px
+        }
+
+        body {
+            margin: 0;
+            background: var(--ink);
+            color: #fff;
+            font-family: 'DM Sans', sans-serif
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            width: min(1180px, calc(100% - 48px));
+            margin: auto
+        }
+
+        .eyebrow {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--gold);
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .eyebrow:before {
+            content: '';
+            width: 26px;
+            height: 2px;
+            background: var(--gold)
+        }
+
+        h1,
+        h2,
+        h3,
+        .brand,
+        .big-num {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase
+        }
+
+        h2 {
+            font-size: clamp(44px, 6vw, 76px);
+            line-height: .92;
+            margin: 18px 0 24px;
+            letter-spacing: -.025em
+        }
+
+        p {
+            line-height: 1.75;
+            color: #c5c2ba
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: linear-gradient(120deg, #ffdf61, #ffc20e 48%, #e89a00);
+            color: #15130e;
+            padding: 15px 23px;
+            font-weight: 800;
+            font-size: 12px;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            border-radius: 3px;
+            transition: .2s
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px #ffc20e33
+        }
+
+        .btn.ghost {
+            background: transparent;
+            border: 1px solid #ffffff40;
+            color: white
+        }
+
+        .btn.ghost:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            box-shadow: none
+        }
+
+        header {
+            height: 78px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            background: #101010ed;
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid #ffffff14
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between
+        }
+
+        .brand {
+            font-size: 24px;
+            line-height: .8;
+            font-weight: 900;
+            letter-spacing: .02em
+        }
+
+        .brand span {
+            color: var(--gold)
+        }
+
+        .brand small {
+            display: block;
+            font: 700 8px 'DM Sans';
+            letter-spacing: .28em;
+            margin-top: 7px;
+            color: #ddd
+        }
+
+        .links {
+            display: flex;
+            gap: 25px;
+            align-items: center
+        }
+
+        .links a {
+            font-size: 11px;
+            font-weight: 700;
+            color: #d1d1d1
+        }
+
+        .links a:hover {
+            color: var(--gold)
+        }
+
+        .links .nav-cta {
+            color: #15130e
+        }
+
+        .menu {
+            display: none;
+            background: none;
+            border: 0;
+            color: white;
+            font-size: 26px
+        }
+
+        .hero {
+            position: relative;
+            min-height: 660px;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+            background: linear-gradient(90deg, #101010 3%, #101010ed 39%, #10101055 100%), linear-gradient(0deg, #101010 0%, transparent 32%), url('assets/ambiente-01.jpg') center 50%/cover
+        }
+
+        .hero:after {
+            content: 'SALTO';
+            position: absolute;
+            right: -18px;
+            bottom: -105px;
+            font: 900 330px 'Barlow Condensed';
+            color: #fff09;
+            pointer-events: none
+        }
+
+        .hero-inner {
+            position: relative;
+            z-index: 1;
+            max-width: 680px;
+            padding: 100px 0
+        }
+
+        .hero h1 {
+            font-size: clamp(72px, 11vw, 142px);
+            line-height: .78;
+            letter-spacing: -.025em;
+            margin: 24px 0
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--gold)
+        }
+
+        .hero p {
+            max-width: 455px;
+            font-size: 16px
+        }
+
+        .actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap
+        }
+
+        .stats {
+            display: flex;
+            gap: 34px;
+            margin-top: 54px
+        }
+
+        .stats strong {
+            display: block;
+            font: 700 30px 'Barlow Condensed';
+            color: var(--gold)
+        }
+
+        .stats span {
+            font-size: 10px;
+            letter-spacing: .14em;
+            color: #aaa;
+            text-transform: uppercase
+        }
+
+        .section {
+            padding: 108px 0
+        }
+
+        .about {
+            background: var(--paper);
+            color: var(--ink)
+        }
+
+        .about p {
+            color: #56534d
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr .9fr;
+            gap: 80px;
+            align-items: center
+        }
+
+        .about h2 {
+            color: #111
+        }
+
+        .about-copy {
+            max-width: 620px
+        }
+
+        .benefits {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 14px;
+            margin-top: 28px
+        }
+
+        .benefit {
+            border-top: 1px solid #ccc4b2;
+            padding: 15px 10px 6px 0;
+            font-size: 13px;
+            color: #444
+        }
+
+        .benefit b {
+            display: block;
+            color: #171717;
+            margin-bottom: 5px
+        }
+
+        .photo-stack {
+            position: relative;
+            min-height: 510px
+        }
+
+        .photo-stack img {
+            width: 82%;
+            height: 450px;
+            object-fit: cover;
+            display: block;
+            filter: grayscale(10%)
+        }
+
+        .photo-stack:after {
+            content: '';
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 68%;
+            height: 65%;
+            border: 8px solid var(--gold);
+            z-index: -1
+        }
+
+        .photo-note {
+            position: absolute;
+            right: 0;
+            bottom: 23px;
+            background: var(--gold);
+            color: #111;
+            padding: 20px;
+            font: 700 20px 'Barlow Condensed';
+            text-transform: uppercase
+        }
+
+        .gallery {
+            padding-top: 4px;
+            overflow: auto;
+            display: flex;
+            gap: 12px;
+            margin-top: 35px
+        }
+
+        .gallery img {
+            height: 210px;
+            min-width: 290px;
+            object-fit: cover;
+            filter: grayscale(100%);
+            transition: .3s
+        }
+
+        .gallery img:hover {
+            filter: grayscale(0)
+        }
+
+        .programs {
+            background: #111
+        }
+
+        .section-head {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 30px;
+            margin-bottom: 42px
+        }
+
+        .section-head p {
+            max-width: 390px;
+            margin-bottom: 3px
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px
+        }
+
+        .program {
+            height: 80px;
+            position: relative;
+            overflow: hidden;
+            padding: 24px;
+            display: flex;
+            align-items: end;
+            background: linear-gradient(135deg, #3b3116 0%, #1c1b18 52%, #111 100%)
+        }
+
+        .program:before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 80% 15%, #ffc20e55, transparent 52%), linear-gradient(145deg, transparent 35%, #0009);
+            opacity: .8;
+            transition: .35s
+        }
+
+        .program:hover:before {
+            opacity: 1;
+            background: radial-gradient(ellipse at 80% 15%, #ffc20e88, transparent 58%), linear-gradient(145deg, transparent 25%, #000b)
+        }
+
+        .program:after {
+            content: '';
+            position: absolute;
+            inset: 35% 0 0;
+            background: linear-gradient(transparent, #000e)
+        }
+
+        .program h3 {
+            position: relative;
+            z-index: 1;
+            font-size: 32px;
+            margin: 0
+        }
+
+        .program small {
+            position: absolute;
+            z-index: 1;
+            right: 20px;
+            top: 20px;
+            color: var(--gold);
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .16em
+        }
+
+        .schedule {
+            background: #191919
+        }
+
+        .schedule-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 10px
+        }
+
+        .day {
+            border: 1px solid var(--line);
+            padding: 18px 14px;
+            min-height: 236px
+        }
+
+        .day h3 {
+            font-size: 22px;
+            color: var(--gold);
+            margin: 0 0 16px
+        }
+
+        .class {
+            border-top: 1px solid #ffffff19;
+            padding: 10px 0;
+            font-size: 11px;
+            color: #ddd;
+            display: flex;
+            flex-direction: column;
+            gap: 4px
+        }
+
+        .class time {
+            font-weight: 700;
+            color: #fff
+        }
+
+        .pricing {
+            background: var(--paper);
+            color: #111
+        }
+
+        .pricing h2 {
+            color: #111
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px
+        }
+
+        .price-card {
+            background: #fff;
+            border: 1px solid #e6e1d6;
+            padding: 30px;
+            position: relative
+        }
+
+        .price-card.featured {
+            background: #171717;
+            color: white;
+            border-color: #171717
+        }
+
+        .price-card h3 {
+            font-size: 32px;
+            margin: 0 0 18px
+        }
+
+        .tier {
+            display: flex;
+            justify-content: space-between;
+            padding: 14px 0;
+            border-top: 1px solid #ddd;
+            color: #57534b;
+            font-size: 13px
+        }
+
+        .featured .tier {
+            border-color: #ffffff25;
+            color: #ddd
+        }
+
+        .tier strong {
+            font-size: 16px;
+            color: #111
+        }
+
+        .featured .tier strong {
+            color: var(--gold)
+        }
+
+        .price-card .btn {
+            width: 100%;
+            margin-top: 16px
+        }
+
+        .instructors {
+            background: #111
+        }
+
+        .coach-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 200px);
+            justify-content: center;
+            gap: 16px
+        }
+
+        .coach {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            background: #272727
+        }
+
+        .coach img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+            opacity: .72;
+            transition: .4s
+        }
+
+        .coach:hover img {
+            filter: grayscale(0);
+            transform: scale(1.03)
+        }
+
+        .coach-label {
+            position: absolute;
+            bottom: 24px;
+            left: 24px
+        }
+
+        .coach-label small {
+            color: var(--gold);
+            font-size: 10px;
+            letter-spacing: .18em;
+            text-transform: uppercase
+        }
+
+        .coach-label h3 {
+            font-size: 42px;
+            margin: 4px 0
+        }
+
+        .reviews {
+            background: #191919
+        }
+
+        .review-panel {
+            border: 1px solid #ffffff22;
+            padding: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px
+        }
+
+        .stars {
+            color: var(--gold);
+            letter-spacing: 5px;
+            font-size: 20px
+        }
+
+        .review-panel h3 {
+            font-size: 30px;
+            margin: 8px 0
+        }
+
+        .contact {
+            background: #111
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 50px
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 22px;
+            margin-top: 32px
+        }
+
+        .contact-item {
+            display: flex;
+            gap: 14px;
+            align-items: flex-start
+        }
+
+        .icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ffffff25;
+            color: var(--gold);
+            display: grid;
+            place-items: center;
+            font-size: 16px
+        }
+
+        .contact-item b {
+            display: block;
+            font-size: 12px;
+            margin: 2px 0 5px
+        }
+
+        .contact-item span {
+            font-size: 13px;
+            color: #bdbab3
+        }
+
+        .map {
+            min-height: 390px;
+            overflow: hidden;
+            border: 1px solid #ffffff25;
+            background: #1a1a1a
+        }
+
+        .map iframe {
+            display: block;
+            width: 100%;
+            height: 100%;
+            min-height: 390px;
+            border: 0;
+            filter: grayscale(100%) invert(92%) contrast(88%)
+        }
+
+        footer {
+            border-top: 1px solid #ffffff1a;
+            padding: 28px 0
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            color: #999;
+            font-size: 11px
+        }
+
+        .social {
+            display: flex;
+            gap: 18px
+        }
+
+        .social a:hover {
+            color: var(--gold)
+        }
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: .65s
+        }
+
+        .reveal.on {
+            opacity: 1;
+            transform: none
+        }
+
+        @media(max-width:900px) {
+            .links {
+                gap: 13px
+            }
+
+            .links a {
+                font-size: 10px
+            }
+
+            .schedule-grid {
+                grid-template-columns: repeat(3, 1fr)
+            }
+
+            .about-grid {
+                gap: 40px
+            }
+
+            .hero {
+                min-height: 600px
+            }
+        }
+
+        @media(max-width:680px) {
+            .wrap {
+                width: min(100% - 34px, 1180px)
+            }
+
+            header {
+                height: 68px
+            }
+
+            .menu {
+                display: block
+            }
+
+            .links {
+                display: none;
+                position: absolute;
+                top: 68px;
+                left: 0;
+                right: 0;
+                background: #111;
+                padding: 18px 24px 24px;
+                flex-direction: column;
+                align-items: stretch;
+                border-bottom: 1px solid #ffffff22
+            }
+
+            .links.open {
+                display: flex
+            }
+
+            .links a {
+                font-size: 13px;
+                padding: 8px
+            }
+
+            .links .nav-cta {
+                text-align: center;
+                margin-top: 6px
+            }
+
+            .hero {
+                min-height: 630px;
+                background-position: 58% center
+            }
+
+            .hero-inner {
+                padding: 75px 0
+            }
+
+            .hero h1 {
+                font-size: 78px
+            }
+
+            .stats {
+                gap: 20px
+            }
+
+            .stats strong {
+                font-size: 24px
+            }
+
+            .section {
+                padding: 76px 0
+            }
+
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px
+            }
+
+            .photo-stack {
+                min-height: 380px
+            }
+
+            .photo-stack img {
+                height: 340px
+            }
+
+            .photo-note {
+                bottom: 0
+            }
+
+            .section-head {
+                display: block
+            }
+
+            .section-head p {
+                margin-top: 0
+            }
+
+            .cards {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .program {
+                height: 220px;
+                padding: 15px
+            }
+
+            .program h3 {
+                font-size: 25px
+            }
+
+            .schedule-grid {
+                grid-template-columns: repeat(2, 1fr)
+            }
+
+            .day {
+                min-height: 0
+            }
+
+            .price-grid {
+                grid-template-columns: 1fr
+            }
+
+            .coach-grid {
+                gap: 10px
+            }
+
+            .coach-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                justify-content: center
+            }
+
+            .coach {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 1
+            }
+
+            .coach-label {
+                left: 14px;
+                bottom: 14px
+            }
+
+            .coach-label h3 {
+                font-size: 30px
+            }
+
+            .review-panel {
+                padding: 26px;
+                display: block
+            }
+
+            .review-panel .btn {
+                margin-top: 20px
+            }
+
+            .map {
+                min-height: 280px
+            }
+
+            .map iframe {
+                min-height: 280px
+            }
+
+            .foot {
+                flex-direction: column;
+                text-align: center
+            }
+
+            .hero:after {
+                font-size: 200px;
+                bottom: -65px
+            }
+        }
+
+        @media(max-width:390px) {
+            .cards {
+                grid-template-columns: 1fr
+            }
+
+            .program {
+                height: 210px
+            }
+
+            .schedule-grid {
+                gap: 6px
+            }
+
+            .day {
+                padding: 14px 10px
+            }
+
+            .day h3 {
+                font-size: 18px
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap nav"><a href="#inicio" class="brand">ALLIANCE<span>.</span><small>SALTO · JIU-JITSU &
+                    JUDÔ</small></a><button class="menu" aria-label="Abrir menu">☰</button>
+            <nav class="links"><a href="#quem-somos">Quem somos</a><a href="#modalidades">Modalidades</a><a
+                    href="#cronograma">Cronograma</a><a href="#planos">Planos</a><a
+                    href="#instrutores">Instrutores</a><a href="#depoimentos">Depoimentos</a><a
+                    href="#contato">Contato</a><a class="btn nav-cta" href="https://wa.me/5511943094339">Agende uma
+                    aula</a></nav>
+        </div>
+    </header>
+    <main>
+        <section class="hero" id="inicio">
+            <div class="wrap hero-inner">
+                <div class="eyebrow">Aliança que transforma</div>
+                <h1>FORÇA.<br>FOCO.<br><em>FAMÍLIA.</em></h1>
+                <p>Mais do que uma arte marcial. Um caminho de confiança, disciplina e evolução para todas as idades.
+                </p>
+                <div class="actions"><a class="btn" href="https://wa.me/5511943094339">Comece sua jornada
+                        <span>↗</span></a><a class="btn ghost" href="#modalidades">Conheça a academia</a></div>
+                <div class="stats">
+                    <div><strong>JIU-JITSU</strong><span>Para todos os níveis</span></div>
+                    <div><strong>JUDÔ</strong><span>Tradição e respeito</span></div>
+                    <div><strong>ALLIANCE</strong><span>Excelência mundial</span></div>
+                </div>
+            </div>
+        </section>
+        <section class="section about" id="quem-somos">
+            <div class="wrap about-grid">
+                <div class="about-copy">
+                    <div class="eyebrow">Nossa academia</div>
+                    <h2>UMA ARTE.<br>MUITAS CONQUISTAS.</h2>
+                    <p>A Academia Alliance Salto é um centro de treinamento de jiu-jitsu e judô, afiliado à Alliance,
+                        uma das maiores e mais respeitadas organizações de artes marciais do mundo. Temos aulas para
+                        todas as idades e níveis: de crianças a adultos, iniciantes a avançados, no-gi e competição.</p>
+                    <p>Nossos professores são experientes e comprometidos em ensinar com segurança. Acreditamos que o
+                        tatame transforma vidas — desenvolvendo defesa pessoal, condicionamento, disciplina e
+                        autoconfiança.</p>
+                    <div class="benefits">
+                        <div class="benefit"><b>01 / Defesa pessoal</b>Aprenda a se proteger com técnica.</div>
+                        <div class="benefit"><b>02 / Condicionamento</b>Mais força, saúde e disposição.</div>
+                        <div class="benefit"><b>03 / Disciplina</b>Respeito que vai além do tatame.</div>
+                        <div class="benefit"><b>04 / Autoconfiança</b>Evolua a cada treino.</div>
+                    </div>
+                    <div class="actions"><a class="btn" href="#contato">Venha nos conhecer ↗</a></div>
+                </div>
+                <div class="photo-stack"><img
+                        src="assets/ambiente-01.jpg"
+                        alt="Atletas treinando artes marciais">
+                    <div class="photo-note">Seu próximo passo começa aqui.</div>
+                </div>
+            </div>
+            <div class="wrap gallery">
+                <img src="assets/ambiente-01.jpg" alt="">
+                <img src="assets/ambiente-02.jpg" alt="">
+                <img src="assets/ambiente-03.jpg" alt="">
+                <img src="assets/ambiente-04.jpg" alt="">
+                <img src="assets/ambiente-05.jpg" alt="">
+                <img src="assets/ambiente-06.jpg" alt="">
+                <img src="assets/ambiente-07.jpg" alt="">
+                <img src="assets/ambiente-08.jpg" alt="">
+            </div>
+        </section>
+        <section class="section programs" id="modalidades">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">Encontre seu caminho</div>
+                        <h2>TREINE DO SEU JEITO.</h2>
+                    </div>
+                    <p>Uma turma para cada fase da sua jornada. Comece no seu ritmo e descubra até onde você pode
+                        chegar.</p>
+                </div>
+                <div class="cards">
+                    <article class="program"><small>01</small>
+                        <h3>Kids</h3>
+                    </article>
+                    <article class="program"><small>02</small>
+                        <h3>Iniciante</h3>
+                    </article>
+                    <article class="program"><small>03</small>
+                        <h3>Intermediário</h3>
+                    </article>
+                    <article class="program"><small>04</small>
+                        <h3>Competição</h3>
+                    </article>
+                    <article class="program"><small>05</small>
+                        <h3>No-Gi</h3>
+                    </article>
+                    <article class="program"><small>06</small>
+                        <h3>Judô</h3>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section schedule" id="cronograma">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">Organize sua semana</div>
+                        <h2>HORÁRIOS.</h2>
+                    </div>
+                    <p>Escolha sua turma e reserve seu lugar no tatame.</p>
+                </div>
+                <div class="schedule-grid" id="schedule"></div>
+            </div>
+        </section>
+        <section class="section pricing" id="planos">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">Invista em você</div>
+                        <h2>SEU PLANO.<br>SUA EVOLUÇÃO.</h2>
+                    </div>
+                    <p>Planos para começar e seguir evoluindo. Fale com a equipe para conhecer as condições de
+                        matrícula.</p>
+                </div>
+                <div class="price-grid">
+                    <article class="price-card">
+                        <h3>Kids</h3>
+                        <div class="tier"><span>Anual</span><strong>R$ 165<small>/mês</small></strong></div>
+                        <div class="tier"><span>Semestral</span><strong>R$ 200<small>/mês</small></strong></div>
+                        <div class="tier"><span>Mensal</span><strong>R$ 290<small>/mês</small></strong></div><a
+                            class="btn"
+                            href="https://wa.me/5511943094339?text=Oi!%20Quero%20saber%20sobre%20os%20planos%20Kids.">Escolher
+                            plano ↗</a>
+                    </article>
+                    <article class="price-card featured">
+                        <h3>Adulto</h3>
+                        <div class="tier"><span>Anual</span><strong>R$ 189<small>/mês</small></strong></div>
+                        <div class="tier"><span>Semestral</span><strong>R$ 215<small>/mês</small></strong></div>
+                        <div class="tier"><span>Mensal</span><strong>R$ 350<small>/mês</small></strong></div><a
+                            class="btn"
+                            href="https://wa.me/5511943094339?text=Oi!%20Quero%20saber%20sobre%20os%20planos%20Adulto.">Escolher
+                            plano ↗</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section instructors" id="instrutores">
+            <div class="wrap">
+                <div class="section-head">
+                    <div>
+                        <div class="eyebrow">Aprenda com quem vive o tatame</div>
+                        <h2>QUEM ENSINA.</h2>
+                    </div>
+                    <p>Professores qualificados, dedicados à sua evolução e à construção de uma comunidade forte.</p>
+                </div>
+                <div class="coach-grid">
+                    <article class="coach"><img
+                            src="assets/perfil_bruno.webp"
+                            alt="Instrutor Bruno">
+                        <div class="coach-label"><small>Professor</small>
+                            <h3>Bruno</h3>
+                        </div>
+                    </article>
+                    <article class="coach"><img
+                            src="assets/perfil_brian.webp"
+                            alt="Instrutor Brian">
+                        <div class="coach-label"><small>Professor</small>
+                            <h3>Brian</h3>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+        <section class="section reviews" id="depoimentos">
+            <div class="wrap">
+                <div class="review-panel">
+                    <div>
+                        <div class="eyebrow">Quem treina recomenda</div>
+                        <div class="stars">★★★★★</div>
+                        <h3>Faça parte dessa história.</h3>
+                        <p>Veja as experiências de quem já treina com a gente ou conte como foi a sua.</p>
+                    </div><a class="btn" href="https://www.google.com/maps/search/?api=1&query=Alliance+Salto+Jiu+Jitsu"
+                        target="_blank" rel="noreferrer">Ver e avaliar no Google ↗</a>
+                </div>
+            </div>
+        </section>
+        <section class="section contact" id="contato">
+            <div class="wrap contact-grid">
+                <div>
+                    <div class="eyebrow">Chega mais</div>
+                    <h2>SEU LUGAR<br>É NO TATAME.</h2>
+                    <p>Agende uma aula experimental e venha conhecer a Alliance Salto.</p>
+                    <div class="contact-list"><a class="contact-item" href="https://wa.me/5511943094339"><span
+                                class="icon">↗</span><span><b>WhatsApp</b><span>(11) 94309-4339</span></span></a><a
+                            class="contact-item" href="tel:+5511943094339"><span
+                                class="icon">☎</span><span><b>Celular</b><span>(11) 94309-4339</span></span></a>
+                        <div class="contact-item"><span class="icon">⌖</span><span><b>Endereço</b><span>Av. dos Três
+                                    Poderes, 268<br>Residencial Central Parque, Salto – SP</span></span></div>
+                    </div>
+                    <div class="actions"><a class="btn" href="https://wa.me/5511943094339">Falar com a equipe ↗</a>
+                    </div>
+                </div>
+                <div class="map"><iframe title="Mapa de localização da Alliance Salto"
+                        src="https://maps.google.com/maps?q=Av.%20dos%20Tr%C3%AAs%20Poderes%2C%20268%2C%20Salto%20-%20SP&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="wrap foot"><a class="brand" href="#inicio">ALLIANCE<span>.</span><small>SALTO · JIU-JITSU &
+                    JUDÔ</small></a><span>© <span id="year"></span> Criado por <a
+                    href="https://onerd.cc" target="_blank" rel="noreferrer">ONerd</a></span>
+            <div class="social"><a href="https://www.instagram.com/alliancesalto/" target="_blank"
+                    rel="noreferrer">Instagram ↗</a><a href="https://www.facebook.com/alliancesalto/?locale=pt_BR"
+                    target="_blank" rel="noreferrer">Facebook ↗</a></div>
+        </div>
+    </footer>
+    <script>
+        const days = [['Segunda-feira', [['Intermediário', '12:30 – 13:30'], ['Kids I', '18:00 – 19:00'], ['Iniciante', '19:00 – 20:00'], ['Intermediário', '20:00 – 21:00'], ['Competição', '21:00 – 22:00']]], ['Terça-feira', [['Iniciante / Intermediário', '07:30 – 08:30'], ['Iniciante / Intermediário', '09:00 – 10:00'], ['Competição', '12:30 – 13:30'], ['Judô', '18:00 – 19:00'], ['Kids II', '19:00 – 20:00'], ['Iniciante', '20:00 – 21:00'], ['No-Gi', '21:00 – 22:00']]], ['Quarta-feira', [['No-Gi', '09:00 – 10:00'], ['Intermediário', '12:30 – 13:30'], ['Kids I', '18:00 – 19:00'], ['Iniciante', '19:00 – 20:00'], ['Intermediário', '20:00 – 21:00'], ['Competição', '21:00 – 22:00']]], ['Quinta-feira', [['Iniciante / Intermediário', '07:30 – 08:30'], ['Iniciante / Intermediário', '09:00 – 10:00'], ['Competição', '12:30 – 13:30'], ['Judô', '18:00 – 19:00'], ['Kids II', '19:00 – 20:00'], ['Iniciante', '20:00 – 21:00'], ['Intermediário', '21:00 – 22:00']]], ['Sexta-feira', [['No-Gi', '13:30 – 13:30*'], ['No-Gi', '20:00 – 21:00']]], ['Sábado', [['Iniciante / Intermediário', '09:00 – 10:00'], ['Competição', '10:00 – 11:00']]]]; document.querySelector('#schedule').innerHTML = days.map(([d, cs]) => `<article class="day"><h3>${d}</h3>${cs.map(([n, t]) => `<div class="class"><b>${n}</b><time>${t}</time></div>`).join('')}</article>`).join(''); document.querySelector('#year').textContent = new Date().getFullYear(); document.querySelector('.menu').addEventListener('click', () => document.querySelector('.links').classList.toggle('open')); document.querySelectorAll('.links a').forEach(a => a.addEventListener('click', () => document.querySelector('.links').classList.remove('open'))); const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('on') }), { threshold: .08 }); document.querySelectorAll('.section-head,.about-copy,.photo-stack,.program,.price-card,.coach,.review-panel,.contact-grid').forEach(e => { e.classList.add('reveal'); io.observe(e) });
+    </script>
+</body>
+
+</html>
